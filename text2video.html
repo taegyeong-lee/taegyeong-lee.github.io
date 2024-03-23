@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Grid Diffusion Models for Text-to-Video Generation, CVPR 2024">
+  <meta name="keywords" content="CVPR2024, CVPR">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grid Diffusion Models for Text-to-Video Generation</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src=""></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="stylesheet" href="./static/css/t2v_index.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+ <meta name="google-site-verification" content="04MAX7U6p8EJxriBihcBaOVxV-O8_mmpbbnSuynE6Zc" />
+
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://sites.google.com/view/taegyeonglee/home">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <p>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024</p>
+          <h1 class="title is-1 publication-title">Grid Diffusion Models for Text-to-Video Generation</h1>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://sites.google.com/view/taegyeonglee/home">Taegyeong Lee*</a>,</span>
+            <span class="author-block">
+              Soyeong Kwon*,</span>
+            <span class="author-block">
+              <a href="https://sites.google.com/view/taehwankim">Taehwan Kim</a>
+            </span>
+
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Artificial Intelligence Graduate School, UNIST</span><br>
+            <span class="author-block">{taegyeonglee, soyoung17, taehwankim}@unist.ac.kr </span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/taegyeong-lee/Grid-Diffusion-Models-for-Text-to-Video-Generation"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="hero teaser ">
+  <div class="container is-max-desktop">
+    <div class="hero-body" >
+              <center>
+            <h2 class="title is-3">Text-to-Video Generation Results</h2>
+        </center>
+        <center>
+            <div class="large-2 columns">
+                </div><br><table align="center">
+                <tbody>
+                    <tr>
+                        <td align="left" style="padding-left: 2px; padding-bottom: 0px;"><img class="center" width="254" height="254" src="./static/videos/t2v/Earth from space, zooming in._20231108_20_03_0.gif"></td>
+                    <td align="left" style="padding-left: 2px; padding-bottom: 0px;"><img class="center" width="254" height="254" src="./static/videos/t2v/Teddy bear looking at the fireworks and Space Needle, 4k high resolution_20231029_16_41_23.gif">
+                    </td>
+
+                    <td align="left" style="padding-left: 2px; padding-bottom: 0px;"><img class="center" width="254" height="254" src="./static/videos/t2v/Waves crashing against a lone lighthouse, ominous lighting_20231108_17_04_6.gif"></td>
+                    <td align="left" style="padding-left: 2px; padding-bottom: 0px;"><img class="center" width="254" height="254" src="./static/videos/t2v/a man is enjoying his boat ride here_20231121_21_39_2004.gif"></td>
+                    <td align="left" style="padding-left: 2px; padding-bottom: 0px;"><img class="center" width="254" height="254" src="./static/videos/t2v/a animated cat is being zoomed in and out on_20231121_20_48_2101.gif">
+                    </td>
+                </tr>
+                <tr>
+                    <td width="256" valign="middle" halign="middle" align="center" style="font-size:13px; padding-bottom:20px">Earth from space, zooming in</td>
+                    <td width="256" valign="middle" halign="middle" align="center" style="font-size:13px; padding-bottom:20px">Teddy bear looking at the fireworks and Space Needle, 4k high resolution</td>
+                    <td width="256" valign="middle" halign="middle" align="center" style="font-size:13px; padding-bottom:20px">Waves crashing against a lone lighthouse, ominous lighting</td>
+                    <td width="256" valign="middle" halign="middle" align="center" style="font-size:13px; padding-bottom:20px">A man is enjoying his boat ride here</td>
+                    <td width="256" valign="middle" halign="middle" align="center" style="font-size:13px; padding-bottom:20px">A animated cat is being zoomed in</td>
+                </tr>
+
+                  <tr>
+                    <td align="left" style="padding-left: 2px; padding-bottom: 0px;"><img class="center" width="254" height="254" src="./static/videos/t2v/2 kids are fun talking with food on tablepeople walking on the snow covered mountains_our.gif">
+                        <td align="left" style="padding-left: 2px; padding-bottom: 0px;"><img class="center" width="254" height="254" src="./static/videos/t2v/A businessman reading a newspaper on the morning commute_our.gif"></td>
+
+                    </td>
+
+                    <td align="left" style="padding-left: 2px; padding-bottom: 0px;"><img class="center" width="254" height="254" src="./static/videos/t2v/A grandmother knitting a scarf under a cherry blossom tree_our.gif"></td>
+                    <td align="left" style="padding-left: 2px; padding-bottom: 0px;"><img class="center" width="254" height="254" src="./static/videos/t2v/A snowman sunbathing on a beach_our.gif"></td>
+                    <td align="left" style="padding-left: 2px; padding-bottom: 0px;"><img class="center" width="254" height="254" src="./static/videos/t2v/A street musician playing a violin in a city center_our.gif">
+                    </td>
+                </tr>
+                <tr>
+                    <td width="256" valign="middle" halign="middle" align="center" style="font-size:13px; padding-bottom:20px">2 kids are fun talking with food on tablepeople walking on the snow covered mountains</td>
+                    <td width="256" valign="middle" halign="middle" align="center" style="font-size:13px; padding-bottom:20px">A businessman reading a newspaper on the morning commute</td>
+                    <td width="256" valign="middle" halign="middle" align="center" style="font-size:13px; padding-bottom:20px">A grandmother knitting a scarf under a cherry blossom tree</td>
+                    <td width="256" valign="middle" halign="middle" align="center" style="font-size:13px; padding-bottom:20px">A snowman sunbathing on a beach</td>
+                    <td width="256" valign="middle" halign="middle" align="center" style="font-size:13px; padding-bottom:20px">A street musician playing a violin in a city center</td>
+                </tr>
+            </tbody>
+
+        </table>
+
+
+        </center>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered" style="padding-bottom: 5%;">
+      <div class="column ">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+          Recent advances in the diffusion model have significantly improved text-to-image generation. However, generating videos from text is a more challenging task than generating images from text, due to the much larger dataset and higher computational cost required. Most existing video generation methods use either a 3D U-Net architecture that considers the temporal dimension or autoregressive generation. These methods require large datasets and are limited in terms of computational costs compared to text-to-image generation. To tackle these challenges, we propose a simple but effective novel grid diffusion for text-to-video generation without temporal dimension in architecture and large text-video paired dataset. We can generate a high-quality video using a fixed amount of GPU memory regardless of the number of frames by representing the video as a grid image. Additionally, since our method reduces the dimensions of video to the dimensions of image, various image-based methods can be applied to videos such as text-guided video manipulation from image manipulation. Our proposed method outperforms the existing methods in both quantitative and qualitative evaluations, demonstrating the suitability of our model for real-world video generation.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Method Overview. -->
+    <div class="columns is-centered has-text-centered" style="padding: 1px;">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Method Overview</h2>
+        <div class="content has-text-justified">
+          <img id="teaser" src="./static/images/t2v/method_overview.png" height="100%">
+          <p><b>Overview of our approach.</b> Our approach consists of two stages. In the first stage (a), our key grid image generation model generates a key grid image following input prompt. In the second stage (b), our model generates masked grid images by applying masking between each of the four frames and performs a 1-step interpolation using 'Fill in the blanks,' as a prefix with the prompt. Then, our model conducts a 2-step interpolation with the 2-step interpolation model, using the masked grid image from the 1-step interpolation images as input.
+          </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<section class="hero teaser " style="padding-top:20px">
+  <div class="container is-max-desktop">
+    <div class="hero-body" >
+              <center>
+            <h2 class="title is-3">Text-to-Video Generation More Frames (64 and 128 Frames)</h2>
+        </center>
+        <center>
+            <div class="large-2 columns">
+                </div><br><table align="center">
+                <tbody>
+                                  <tr>
+                    <td align="left" style="padding-left: 2px; padding-bottom: 0px;"><img class="center" width="254" height="254" src="./static/videos/t2v/a bunch of home made deserts are shown in a kitchen_ours.gif">
+                        <td align="left" style="padding-left: 2px; padding-bottom: 0px;"><img class="center" width="254" height="254" src="./static/videos/t2v/a cook in a black t-shirt is making a meatloaf he is convinced will be spectacular_ours.gif"></td>
+
+                    </td>
+
+                    <td align="left" style="padding-left: 2px; padding-bottom: 0px;"><img class="center" width="254" height="254" src="./static/videos/t2v/beautiful video of water flow between rocks from forest_ours.gif"></td>
+                    <td align="left" style="padding-left: 2px; padding-bottom: 0px;"><img class="center" width="254" height="254" src="./static/videos/t2v/some one in a kitchen pouring sauce to a glass bowl_ours.gif"></td>
+                    <td align="left" style="padding-left: 2px; padding-bottom: 0px;"><img class="center" width="254" height="254" src="./static/videos/t2v/A young woman walk in the city. 4k high resolution_20240323_17_40_52.gif">
+                    </td>
+                </tr>
+                <tr>
+                    <td width="256" valign="middle" halign="middle" align="center" style="font-size:13px; padding-bottom:20px">a bunch of home made deserts are shown in a kitchen</td>
+                    <td width="256" valign="middle" halign="middle" align="center" style="font-size:13px; padding-bottom:20px">a cook in a black t-shirt is making a meatloaf he is convinced will be spectacular</td>
+                    <td width="256" valign="middle" halign="middle" align="center" style="font-size:13px; padding-bottom:20px">beautiful video of water flow between rocks from forest</td>
+                    <td width="256" valign="middle" halign="middle" align="center" style="font-size:13px; padding-bottom:20px">some one in a kitchen pouring sauce to a glass bowl</td>
+                    <td width="256" valign="middle" halign="middle" align="center" style="font-size:13px; padding-bottom:20px">A young woman walk in the city. 4k high resolution</td>
+                </tr>
+
+
+                    <tr>
+                        <td align="left" style="padding-left: 2px; padding-bottom: 0px;"><img class="center" width="254" height="254" src="./static/videos/t2v/A 360-degree rotating view of the park during the day..gif"></td>
+                    <td align="left" style="padding-left: 2px; padding-bottom: 0px;"><img class="center" width="254" height="254" src="./static/videos/t2v/a car is driving on the road_20231126_22_46_44.gif">
+                    </td>
+
+                    <td align="left" style="padding-left: 2px; padding-bottom: 0px;"><img class="center" width="254" height="254" src="./static/videos/t2v/flying through fantasy landscapes_20231127_14_58_57.gif"></td>
+                    <td align="left" style="padding-left: 2px; padding-bottom: 0px;"><img class="center" width="254" height="254" src="./static/videos/t2v/Yellow flowers swing in the wind_20240323_16_55_54.gif"></td>
+                    <td align="left" style="padding-left: 2px; padding-bottom: 0px;"><img class="center" width="254" height="254" src="./static/videos/t2v/On busy city streets, lights flicker to illuminate the dynamic of life. People rush to their daily lives._20240323_17_25_01.gif">
+                    </td>
+                </tr>
+                <tr>
+                    <td width="256" valign="middle" halign="middle" align="center" style="font-size:13px; padding-bottom:20px">A 360-degree rotating view of the park during the day</td>
+                    <td width="256" valign="middle" halign="middle" align="center" style="font-size:13px; padding-bottom:20px">a car is driving on the road</td>
+                    <td width="256" valign="middle" halign="middle" align="center" style="font-size:13px; padding-bottom:20px">flying through fantasy landscapes</td>
+                    <td width="256" valign="middle" halign="middle" align="center" style="font-size:13px; padding-bottom:20px">Yellow flowers swing in the wind</td>
+                    <td width="256" valign="middle" halign="middle" align="center" style="font-size:13px; padding-bottom:20px">On busy city streets, lights flicker to illuminate the dynamic of life. People rush to their daily lives</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+
+        </center>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+        None
+    </code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/taegyeong-lee" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
